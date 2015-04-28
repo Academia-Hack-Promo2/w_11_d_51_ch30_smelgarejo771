@@ -1,0 +1,43 @@
+<html>
+   <head>
+       <meta charset="UTF-8"/>
+       <title></title>
+   </head>
+   <body>
+       
+       <p id="p1">parrafo 1</p>
+       
+       <p id="p2">parrafo 2</p>
+       
+       <p id="p3">parrafo 3</p>
+       
+       <p id="p4">parrafo 4</p>
+       
+       <input type="text" id="t1">
+       <input type="text" id="t2">
+       
+       <button id="btn">=)</button>
+       
+       <script src="js/jquery.js" ></script>
+       <script>
+           $(function(){
+            
+            var t1 = $('#t1');
+            var t2 = $('#t2');
+            var btn = $('#btn');
+            var parrafos = $('p');
+            
+            
+            btn.click(function(){
+            
+            text1 = parseInt(t1.val());
+            text2 = parseInt(t2.val());
+            
+            aux = $('p:nth-child('+text1+')').text();
+            $('p:nth-child('+text1+')').text($('p:nth-child('+text2+')').text());
+            $('p:nth-child('+text2+')').text(aux);
+            });
+           });
+       </script>
+   </body>
+</html>
